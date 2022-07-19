@@ -12,6 +12,8 @@ for i = 1:4
     xlabel("Time Step")
 end
 
+
+
 options = trainingOptions("adam", ...
     MaxEpochs=200, ...
     SequencePaddingDirection="left", ...
@@ -86,6 +88,8 @@ histogram(MAEValidation)
 xlabel("Mean Absolute Error (MAE)")
 ylabel("Frequency")
 title("Representative Samples")
+
+MAEbaseline = max(MAEValidation)
 
 XNew = XValidation;
 
